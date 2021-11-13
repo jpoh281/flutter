@@ -123,12 +123,12 @@ Future<void> skipPastScrollingAnimation(WidgetTester tester) async {
 }
 
 double getOpacity(WidgetTester tester, Finder finder) {
-  return tester.widget<FadeTransition>(
+  return tester.widget<AnimatedOpacity>(
     find.ancestor(
       of: finder,
       matching: find.byType(FadeTransition),
     ),
-  ).opacity.value;
+  ).opacity;
 }
 
 class TestFormatter extends TextInputFormatter {
